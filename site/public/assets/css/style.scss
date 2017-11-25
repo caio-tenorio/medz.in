@@ -1,0 +1,167 @@
+$light-green: #B7E6E0;
+$grey: #3F4444;
+$bloody-red: #E6181A;
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:500,700');
+
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+html, body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#hero {
+    background: linear-gradient(rgba(0, 0, 0,.75), rgba(0, 0, 0,.75)), url('/assets/bg.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    
+    h1 {
+        color: $light-green;
+        font-weight: 500;
+        font-size: 2.5em;
+        margin: 16px 0;
+    }
+    
+    h3 {
+        color: #fff;
+        font-weight: 500;
+        font-size: 1.4em;
+        margin: 8px 0;
+    }
+    
+    a#hero-button {
+        color: $light-green;
+        border: 1px solid $light-green;
+        padding: 8px 16px;
+        text-decoration: none;
+        font-size: 1.2em;
+        font-weight: 500;
+        margin: 24px 0;
+    }
+    
+}
+
+nav {
+    background: $grey;
+    padding: 8px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: $light-green;
+    
+    &.sticky {
+        position: fixed;
+    }
+    
+    .green-logo {
+        font-weight: 700;
+        font-size: 1.8em;
+        color: $light-green;
+    }
+    
+    ul {
+        list-style: none;
+        li {
+            display: inline;
+            margin: 0 16px;
+            a {
+                text-decoration: none;
+                color: $light-green;
+            }
+        }
+    }
+}
+
+section {
+    
+    &#viability {
+        padding: 48px 0;
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            
+            .card {
+                display: flex;
+                align-items: flex-start;
+                
+                .card-icon {
+                    width: 60px;
+                    height: 60px;
+                    margin: 0 16px;
+                    
+                    &.pills {
+                        background: url("/assets/medizinIcon02.png");
+                        background-size: cover;
+                    }
+                    
+                    &.plus {
+                        background: url("/assets/medizinIcon03.png");
+                        background-size: cover;
+                    }
+                }
+                .card-text {
+                    max-width: 300px;
+                    span {
+                        &:first-child {
+                            font-size: 1.1em;
+                        }
+                    }
+                    
+                    p {
+                        font-size: 1em;
+                    }
+                }
+            }
+        }
+    }
+    
+    &#discounts {
+        
+        h1 {
+            color: $bloody-red;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            
+            #discounts-grid {
+                display: grid;
+                grid-template-columns: 25% 25% 25% 25%;
+                
+                .discount-card {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    
+                    img {
+                        width: 150px;
+                        height: 150px;
+                        margin: 8px 0; 
+                    }
+                    
+                    .card-preco {
+                        margin: 16px 0;
+                    }
+                    
+                    .strike {
+                        text-decoration: line-through;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,95 +1,103 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}">
     <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <title>Laravel</title>
-
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
-                margin: 0;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
+        <meta charset="UTF-8"> 
+        <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @if (Auth::check())
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ url('/login') }}">Login</a>
-                        <a href="{{ url('/register') }}">Register</a>
-                    @endif
-                </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
+        <div class="wrapper">
+            
+            <div id="hero">
+                <h1>Compre remédios com desconto</h1>
+                <h3>Encontre medicamentos com até 90% de desconto</h3>
+                <a href="#" id="hero-button">Pesquisar</a>
             </div>
+            
+            <nav>
+                <span class="green-logo">mediz.in</span>
+                <ul>
+                    <li><a href="#">Descontos</a></li>
+                    <li><a href="#">Comprimissos</a></li>
+                </ul>
+            </nav>
+            
+            <section id="viability">
+                <div class="container">
+                    <div class="card">
+                        <div class="card-icon pills"></div>
+                        <div class="card-text">
+                            <span>Evite o desperdício</span>
+                            <p>Em 201X, Y medicamentos foram incinerados
+                            pela perda da validade, ocasionando Z% do gás
+                            carbono liberado na atmosfera no mesmo ano</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon plus"></div>
+                        <div class="card-text">
+                            <span>Responsabilidade ambiental</span>
+                            <p>Ao adquirir um produto, você estará
+                            evitando o desperdício de medicamentos e que
+                            mais gases poluentes sejam emitidos</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="discounts">
+                <div class="container">
+                    <h1>Descontos de novembro</h1>
+                    <div id="discounts-grid">
+                        <div class="discount-card">
+                            <img src="https://www.onofre.com.br/estatico/Produto/Super/121029.jpg"></img>
+                            <span>Nome do remédio</span>
+                            
+                            <div class="card-preco">de <span class="strike">R$ 50,30</span><br>
+                            por R$ 47,90<br>
+                            desconto de X%!</div>
+                            
+                            <span>Vencimento:</span>
+                            <span>DD/MM/AAAA</span>
+                        </div>
+                        
+                        <div class="discount-card">
+                            <img src="https://www.onofre.com.br/estatico/Produto/Super/121029.jpg"></img>
+                            <span>Nome do remédio</span>
+                            
+                            <div class="card-preco">de <span class="strike">R$ 50,30</span><br>
+                            por R$ 47,90<br>
+                            desconto de X%!</div>
+                            
+                            <span>Vencimento:</span>
+                            <span>DD/MM/AAAA</span>
+                        </div>
+                        
+                        <div class="discount-card">
+                            <img src="https://www.onofre.com.br/estatico/Produto/Super/121029.jpg"></img>
+                            <span>Nome do remédio</span>
+                            
+                            <div class="card-preco">de <span class="strike">R$ 50,30</span><br>
+                            por R$ 47,90<br>
+                            desconto de X%!</div>
+                            
+                            <span>Vencimento:</span>
+                            <span>DD/MM/AAAA</span>
+                        </div>
+                        
+                        <div class="discount-card">
+                            <img src="https://www.onofre.com.br/estatico/Produto/Super/121029.jpg"></img>
+                            <span>Nome do remédio</span>
+                            
+                            <div class="card-preco">de <span class="strike">R$ 50,30</span><br>
+                            por R$ 47,90<br>
+                            desconto de X%!</div>
+                            
+                            <span>Vencimento:</span>
+                            <span>DD/MM/AAAA</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
     </body>
 </html>
