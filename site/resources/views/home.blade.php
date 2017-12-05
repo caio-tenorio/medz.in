@@ -30,16 +30,16 @@
                     	@foreach($medicamentos as $medicamento)
                         <div class="discount-card">
                             <img src="{{ $medicamento->image_url }}" />
-                            <span>{{ $medicamento->name }}</span>
+                            <span>{{ $medicamento->nome }}</span>
                             
-                            <div class="card-preco">de <span class="strike">R$ {{ $medicamento->from }}</span><br>
-                            por R$ {{ $medicamento->to }}<br>
-                            desconto de {{ $medicamento->percent }}%!</div>
+                            <div class="card-preco">de <span class="strike">R$ {{ $medicamento->preco_inicial }}</span><br>
+                            por R$ {{ $medicamento->preco_final }}<br>
+                            desconto de {{ (1 - $medicamento->preco_final/$medicamento->preco_inicial) * 100 }}%!</div>
                             
                             <button class="purchase">Adquirir</button>
                             
                             <span>Vencimento:</span>
-                            <span>{{ $medicamento->validate }}</span>
+                            <span>{{ $medicamento->validade }}</span>
                         </div>
                         @endforeach
                     </div>
