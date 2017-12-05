@@ -3,51 +3,29 @@
     <head>
         <meta charset="UTF-8"> 
         <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
+        <link rel="stylesheet" href="assets/slick/slick.css" type="text/css"/>
+        <link rel="stylesheet" href="assets/slick/slick-theme.css" type="text/css"/>
+        <title>Medizi</title>
     </head>
     <body>
         <div class="wrapper">
             
-            <div id="hero">
-                <h1>Compre remédios com desconto</h1>
-                <h3>Encontre medicamentos com até 90% de desconto</h3>
-                <a href="#" id="hero-button">Pesquisar</a>
-            </div>
-            
             <nav>
-                <span class="green-logo">mediz.in</span>
+                <span class="green-logo">medizi</span>
                 <ul>
-                    <li><a href="#">Descontos</a></li>
-                    <li><a href="#">Comprimissos</a></li>
+                    <li><a href="#discounts">Descontos</a></li>
+                    <li><a href="#viability">Comprimissos</a></li>
                 </ul>
             </nav>
             
-            <section id="viability">
-                <div class="container">
-                    <div class="card">
-                        <div class="card-icon pills"></div>
-                        <div class="card-text">
-                            <span>Evite o desperdício</span>
-                            <p>Em 201X, Y medicamentos foram incinerados
-                            pela perda da validade, ocasionando Z% do gás
-                            carbono liberado na atmosfera no mesmo ano</p>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-icon plus"></div>
-                        <div class="card-text">
-                            <span>Responsabilidade ambiental</span>
-                            <p>Ao adquirir um produto, você estará
-                            evitando o desperdício de medicamentos e que
-                            mais gases poluentes sejam emitidos</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            
+            <div id="hero">
+                <h1>Compre remédios com desconto</h1>
+                <h3>Encontre medicamentos com até 90% de desconto</h3>
+            </div>
             
             <section id="discounts">
                 <div class="container">
-                    <h1>Descontos</h1>
+                    <h1>Descontos de novembro</h1>
                     <div id="discounts-grid">
                     	@foreach($medicamentos as $medicamento)
                         <div class="discount-card">
@@ -58,26 +36,122 @@
                             por R$ {{ $medicamento->to }}<br>
                             desconto de {{ $medicamento->percent }}%!</div>
                             
+                            <button class="purchase">Adquirir</button>
+                            
                             <span>Vencimento:</span>
                             <span>{{ $medicamento->validate }}</span>
                         </div>
                         @endforeach
-                        
-                        <div class="discount-card">
-                            <img src="https://www.onofre.com.br/estatico/Produto/Super/121029.jpg"></img>
-                            <span>Nome do remédio</span>
-                            
-                            <div class="card-preco">de <span class="strike">R$ 50,30</span><br>
-                            por R$ 47,90<br>
-                            desconto de X%!</div>
-                            
-                            <span>Vencimento:</span>
-                            <span>DD/MM/AAAA</span>
-                        </div>
-
                     </div>
                 </div>
             </section>
         </div>
+        
+        <section id="viability">
+            <div class="container">
+                
+                <div class="card-container">
+                    <div class="card">
+                        <div class="card-icon pills"></div>
+                        <div class="card-text">
+                            <span>Evite o desperdício</span>
+                            <p>Em 2014 e 2015, R$ 16 milhões em
+                            medicamentos foram incinerados 
+                            pela perda da validade, no Distrito Federal 
+                            e em 11 estados, incluindo Pernambuco.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card-container">
+                    <div class="card">
+                        <div class="card-icon pills"></div>
+                        <div class="card-text">
+                            <span>Grandes prejuízos</span>
+                            <p>Estima-se que R$1 bilhão em 
+                            medicamentos são desperdiçados no Brasil. </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card-container">
+                    <div class="card">
+                        <div class="card-icon plus"></div>
+                        <div class="card-text">
+                            <span>O meio ambiente corre risco</span>
+                            <p>Resíduos gerados pelo descarte 
+                            de medicamentos são alguns dos grandes
+                            poluentes do meio ambiente, e são extremamente
+                            difíceis de serem tratados, podendo poluir 
+                            lençóis e poços de água por um bom tempo. </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card-container">
+                    <div class="card">
+                        <div class="card-icon plus"></div>
+                        <div class="card-text">
+                            <span>Responsabilidade Ambiental</span>
+                            <p>Ao adquirir um produto, você estará 
+                            evitando o desperdício de medicamentos 
+                            e que mais gases poluentes sejam emitidos
+                            na natureza. </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card-container">
+                    <div class="card">
+                        <div class="card-icon pills"></div>
+                        <div class="card-text">
+                            <span>Faça parte</span>
+                            <p>Nós da Medizi queremos junto com você 
+                            ajudar na preservação do meio ambiente,
+                            e contribuir para que as próximas gerações
+                            tenham um futuro melhor. </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <div id="modal">
+            <span id='close'>X</span>
+            <span id="drug-name">Nome do Remédio</span>
+            <div id="drug-info">
+                <span>Código: 0000-AAAA-ZZZZ</span>
+                <span>Preço: R$ X,XX</span>
+            </div>
+            <a href="#" id="print">Imprimir</a>
+            <div id="map">Mapa</div>
+            <span id="drugstore-name">Nome da Farmácia</span>
+            <div id="drugstore-info">
+                <span>Bairro</span>
+                <span>Rua, Número</span>
+                <span>Horário de funcionamento</span>
+            </div>
+        </div>
+        
+        <script>
+          function initMap() {
+            var drugstore = {lat: -8.046169, lng: -34.948508};
+            var map = new google.maps.Map(document.getElementById('map'), {
+              zoom: 10,
+              center: drugstore
+            });
+            var marker = new google.maps.Marker({
+              position: drugstore,
+              map: map
+            });
+          }
+        </script>
+        <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQKDdlxSHaemBkch9FW4QALb0HKt_t1vc&callback=initMap">
+        </script>
+        <script type="text/javascript" src="assets/js/jquery.min.js"></script>
+        <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script type="text/javascript" src="assets/slick/slick.min.js"></script>
+        <script type="text/javascript" src="assets/js/script.js"></script>
     </body>
 </html>

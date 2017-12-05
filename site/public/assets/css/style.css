@@ -7,42 +7,18 @@ html, body {
   margin: 0;
   font-family: 'Montserrat', sans-serif; }
 
-#hero {
-  background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("../images/bg.jpg");
-  background-size: cover;
-  background-position: center;
-  height: 80vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  position: relative; }
-  #hero h1 {
-    color: #B7E6E0;
-    font-weight: 500;
-    font-size: 2.5em;
-    margin: 16px 0; }
-  #hero h3 {
-    color: #fff;
-    font-weight: 500;
-    font-size: 1.4em;
-    margin: 8px 0; }
-  #hero a#hero-button {
-    color: #B7E6E0;
-    border: 1px solid #B7E6E0;
-    padding: 8px 16px;
-    text-decoration: none;
-    font-size: 1.2em;
-    font-weight: 500;
-    margin: 24px 0; }
-
 nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
   background: #3F4444;
   padding: 8px 32px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: #B7E6E0; }
+  color: #B7E6E0;
+  z-index: 10;
+  box-sizing: border-box; }
   nav.sticky {
     position: fixed; }
   nav .green-logo {
@@ -58,17 +34,83 @@ nav {
         text-decoration: none;
         color: #B7E6E0; }
 
+#hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("../images/bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 40vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 59px; }
+  #hero h1 {
+    color: #B7E6E0;
+    font-weight: 500;
+    font-size: 2.5em;
+    margin: 16px 0; }
+  #hero h3 {
+    color: #fff;
+    font-weight: 500;
+    font-size: 1.4em;
+    margin: 8px 0; }
+
+section#discounts {
+  padding: 50px 0; }
+  section#discounts h1 {
+    color: #E6181A; }
+  section#discounts .container {
+    max-width: 1000px;
+    margin: 0 auto; }
+    section#discounts .container #discounts-grid {
+      display: grid;
+      grid-template-columns: 25% 25% 25% 25%;
+      grid-row-gap: 80px;
+      margin-top: 50px; }
+      section#discounts .container #discounts-grid .discount-card {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; }
+        section#discounts .container #discounts-grid .discount-card img {
+          width: 150px;
+          height: 150px;
+          margin: 8px 0; }
+        section#discounts .container #discounts-grid .discount-card .card-preco {
+          margin: 16px 0; }
+        section#discounts .container #discounts-grid .discount-card .purchase {
+          border: none;
+          background-color: #E6181A;
+          color: #fff;
+          padding: 8px 24px;
+          font-family: 'Montserrat', sans-serif;
+          font-size: 1.2em;
+          margin: 0 0 16px 0; }
+        section#discounts .container #discounts-grid .discount-card .strike {
+          text-decoration: line-through; }
 section#viability {
-  padding: 48px 0; }
+  background: #585e5e; }
   section#viability .container {
-    max-width: 900px;
+    max-width: 1000px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: flex-start; }
+    section#viability .container .card-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 400px; }
     section#viability .container .card {
       display: flex;
-      align-items: flex-start; }
+      align-items: flex-start;
+      justify-content: flex-start;
+      background: #fff;
+      height: 250px;
+      width: 400px;
+      padding: 20px 0;
+      box-sizing: border-box;
+      box-shadow: -18px 19px 31px rgba(0, 0, 0, 0.2); }
       section#viability .container .card .card-icon {
         width: 60px;
         height: 60px;
@@ -80,30 +122,61 @@ section#viability {
           background: url("../images/medizinIcon03.png");
           background-size: cover; }
       section#viability .container .card .card-text {
-        max-width: 300px; }
+        max-width: 250px; }
         section#viability .container .card .card-text span:first-child {
           font-size: 1.1em; }
         section#viability .container .card .card-text p {
           font-size: 1em; }
-section#discounts h1 {
-  color: #E6181A; }
-section#discounts .container {
-  max-width: 1000px;
-  margin: 0 auto; }
-  section#discounts .container #discounts-grid {
-    display: grid;
-    grid-template-columns: 25% 25% 25% 25%; }
-    section#discounts .container #discounts-grid .discount-card {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start; }
-      section#discounts .container #discounts-grid .discount-card img {
-        width: 150px;
-        height: 150px;
-        margin: 8px 0; }
-      section#discounts .container #discounts-grid .discount-card .card-preco {
-        margin: 16px 0; }
-      section#discounts .container #discounts-grid .discount-card .strike {
-        text-decoration: line-through; }
+
+#modal {
+  position: fixed;
+  top: 100px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  background-color: #fff;
+  width: 600px;
+  border-radius: 4px;
+  box-shadow: 0px 0px 31px 6px rgba(0, 0, 0, 0.2);
+  height: 80%;
+  padding: 80px 32px;
+  box-sizing: border-box;
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between; }
+  #modal.show {
+    display: flex;
+    animation-name: fadeInUp;
+    animation-duration: .25s; }
+  #modal #close {
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 1.5em;
+    padding: 8px; }
+  #modal #drug-info {
+    display: flex;
+    flex-direction: column; }
+  #modal #print {
+    text-decoration: none;
+    color: #000;
+    padding: 8px 24px;
+    border: 1px solid #000; }
+  #modal #map {
+    width: 100%;
+    height: 200px; }
+  #modal #drugstore-info {
+    display: flex;
+    flex-direction: column; }
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate(0, 10%); }
+  to {
+    opacity: 1;
+    transform: none; } }
 
 /*# sourceMappingURL=style.css.map */
