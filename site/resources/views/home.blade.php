@@ -14,7 +14,7 @@
                 <span class="green-logo">medizi</span>
                 <ul>
                     <li><a href="#discounts">Descontos</a></li>
-                    <li><a href="#viability">Comprimissos</a></li>
+                    <li><a href="#viability">Compromissos</a></li>
                 </ul>
             </nav>
             
